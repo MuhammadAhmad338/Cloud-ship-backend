@@ -1,16 +1,16 @@
 import cors from "cors";
 import express from "express";
-import rateLimit from "express-rate-limit";
 import helmet from "helmet";
-import { config } from "./config.js";
 import { pool } from "./db/pool.js";
-import { errorHandler, notFoundHandler } from "./middleware/errors.js";
-import { requireSession } from "./auth/session.js";
+import { config } from "./config.js";
 import authRouter from "./routes/auth.js";
+import rateLimit from "express-rate-limit";
 import activityRouter from "./routes/activity.js";
+import projectsRouter from "./routes/projects.js";
+import { requireSession } from "./auth/session.js";
 import deploymentsRouter from "./routes/deployments.js";
 import environmentsRouter from "./routes/environments.js";
-import projectsRouter from "./routes/projects.js";
+import { errorHandler, notFoundHandler } from "./middleware/errors.js";
 
 export const app = express();
 
